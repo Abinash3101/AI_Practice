@@ -10,3 +10,8 @@ python -m pip install --upgrade pip
 pip install tiktoken
 --generate requirements.txt
 pip freeze > requirements.txt
+
+===============================
+pip install openai
+pip install python-dotenv
+pip install google-genai
