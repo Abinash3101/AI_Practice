@@ -1,0 +1,12 @@
+--Allow windows to run scripts
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+--creating virtual environment
+python -m venv venv
+--Activating virtual environment
+.\venv\Scripts\activate
+--Upgrade pip
+python -m pip install --upgrade pip
+--install tiktoken
+pip install tiktoken
+--generate requirements.txt
+pip freeze > requirements.txt
