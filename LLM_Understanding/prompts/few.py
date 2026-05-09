@@ -35,7 +35,7 @@ response = client.chat.completions.create(
     model="gemini-2.5-flash",
     messages=[
         {"role":"system","content": SYSTEM_PROMPT},
-        {"role":"user", "content":"Hay, Can you write a code in coldfusion to calculate square root of 45"}
+        {"role":"user", "content":"Hay, Can you write a code in coldfusion script format to calculate square root of 45"}
     ]
 )
 
