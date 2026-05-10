@@ -12,3 +12,10 @@ https://openwebui.com/
 https://docs.openwebui.com/getting-started/quick-start/
 
 https://fastapi.tiangolo.com/
+
+https://huggingface.co/
+
+scratch pad:
+https://app.eraser.io/
+
+https://wttr.in/{city}?format=%c+%t

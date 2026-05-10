@@ -1,0 +1,4 @@
+Ollama is used to localy download and run a LLM model
+Hugging face is github of LLM Models
+We can directly test or download LLM models form Hugging face
+LLM with Tools is an Agent

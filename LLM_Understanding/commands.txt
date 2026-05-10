@@ -24,3 +24,10 @@ docker run -d -p 3000:8080 -v open-webui:/app/backend/data --name open-webui ghc
 ===============================
 pip install "fastapi[standard]"
 pip install ollama
+========================
+pip install -U "huggingface_hub"
+pip install transformers (pip install git+https://github.com/huggingface/transformers.git)
+pip install torch
+pip install accelerate
+
+pip install pydantic
