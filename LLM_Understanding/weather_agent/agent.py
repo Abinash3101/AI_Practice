@@ -4,6 +4,8 @@ import json
 import requests
 from pydantic import BaseModel, Field
 from typing import Optional
+import subprocess
+import platform
 
 load_dotenv()
 
@@ -11,6 +13,44 @@ client = OpenAI(
     #api_key="",
     #base_url="https://generativelanguage.googleapis.com/v1beta/openai/"
 )
+
+def run_command(cmd: str):
+    """
+    Run shell commands on both Windows and Unix systems.
+    """
+
+    is_windows = platform.system() == "Windows"
+
+    if is_windows:
+        # Use PowerShell on Windows
+        result = subprocess.run(
+            ["powershell", "-Command", cmd],
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+            errors="replace"
+        )
+    else:
+        # Use bash on Linux/macOS
+        result = subprocess.run(
+            ["bash", "-c", cmd],
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+            errors="replace"
+        )
+
+    print("STDOUT:", result.stdout)
+    print("STDERR:", result.stderr)
+
+    return {
+        "success": result.returncode == 0,
+        "returncode": result.returncode,
+        "stdout": result.stdout,
+        "stderr": result.stderr
+    }
+
+
 
 def get_weather(city: str):
     url = f"https://wttr.in/{city.lower()}?format=%c+%t"
@@ -22,7 +62,8 @@ def get_weather(city: str):
     return "Something went wrong"
 
 available_tools = {
-    "get_weather": get_weather
+    "get_weather": get_weather,
+    "run_command": run_command
 }
 
 SYSTEM_PROMPT = """
@@ -44,6 +85,7 @@ SYSTEM_PROMPT = """
 
     Available Tools:
     - get_weather(city: str): Takes city name as an input string and returns the weather info about the city.
+    - run_command(cmd: str): Takes a system linux command as string and execute the command on user's system and returns the output from that command.
 
 
     Example 1:
@@ -89,7 +131,7 @@ while True:
 
     while True:
         response = client.chat.completions.parse(
-            model="gpt-4o",
+            model="gpt-5-nano",
             response_format=MyOutputFormat,
             messages=message_history
         )

@@ -31,3 +31,7 @@ pip install torch
 pip install accelerate
 
 pip install pydantic
+
+pip install rq (Reddis queue)
+
+python -m rag_queue.main

@@ -2,3 +2,17 @@ Ollama is used to localy download and run a LLM model
 Hugging face is github of LLM Models
 We can directly test or download LLM models form Hugging face
 LLM with Tools is an Agent
+
+RAG, or Retrival-Augmented Generation, is an AI framework that combines the strength of LLM
+with external knowledge source. It enhances the capability of LLMs by allowing them to access and 
+incorporate information from outside their training data.
+
+Langchain gives us tools to use in our day to day AI tasks
+
+Python RQ(Redis queue): Simple job queues for Python (uses REDIS is the backend)
+REDIS open source licenses are revoked so we are going to use Valkey a drop in
+replacement for REDIS
+
+Uvicorn is a lightning-fast, asynchronous ASGI (Asynchronous Server Gateway Interface) 
+web server implementation for Python. It is designed to run high-performance asynchronous frameworks,
+ most commonly FastAPI and Starlette, acting as the bridge between the application and the network

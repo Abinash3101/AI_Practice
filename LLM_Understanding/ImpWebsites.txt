@@ -19,3 +19,8 @@ scratch pad:
 https://app.eraser.io/
 
 https://wttr.in/{city}?format=%c+%t
+
+Vector DB:
+https://qdrant.tech/
+https://www.langchain.com/
+https://reference.langchain.com/python/langchain-community/document_loaders
