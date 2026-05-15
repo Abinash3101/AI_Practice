@@ -34,4 +34,7 @@ pip install pydantic
 
 pip install rq (Reddis queue)
 
-python -m rag_queue.main
+python -m rag_queue.server
+rq worker
+rq worker -w rq.worker.SimpleWorker (in windows)
+we can run multiple workers like these to execute jobs parallely

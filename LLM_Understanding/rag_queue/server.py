@@ -1,7 +1,9 @@
-from fastapi import FastAPI
+from dotenv import load_dotenv
+from .controller import app
+import uvicorn
 
-app = FastAPI()
+load_dotenv()
+def start():
+    uvicorn.run(app, port=8000, host="0.0.0.0")
 
-@app.get('/')
-def root():
-    return {"status": "Server is up and running"}
+start()
