@@ -38,3 +38,9 @@ python -m rag_queue.server
 rq worker
 rq worker -w rq.worker.SimpleWorker (in windows)
 we can run multiple workers like these to execute jobs parallely
+
+pip install -U langgraph
+pip install -U langchain
+
+checkpointing using mongoDB
+pip install -U pymongo langgraph langgraph-checkpoint-mongodb

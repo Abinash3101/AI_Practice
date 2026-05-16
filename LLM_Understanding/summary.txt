@@ -16,3 +16,47 @@ replacement for REDIS
 Uvicorn is a lightning-fast, asynchronous ASGI (Asynchronous Server Gateway Interface) 
 web server implementation for Python. It is designed to run high-performance asynchronous frameworks,
  most commonly FastAPI and Starlette, acting as the bridge between the application and the network
+
+ Multi Modal AI:(not multi model)
+ AI systems that process and integrate information from multiple data types, or "modalities", such as
+ text, image, audio and video, to achieve a more comprehensive and nuanced understanding than single 
+ modality systems.
+
+
+LangGraph is a framework built by LangChain for creating stateful AI agents and workflows.
+Nodes are functions in Langgraph
+Edges are joinings of nodes
+
+conditional_edgs
+======================
+
+In Python, the with keyword is used for resource management.
+
+Your code:
+
+with MongoDBSaver.from_conn_string(DB_URI) as checkpointer:
+
+means:
+
+Create resource
+↓
+Use resource safely
+↓
+Automatically clean up resource
+What Happens Internally
+
+This:
+
+with MongoDBSaver.from_conn_string(DB_URI) as checkpointer:
+    ...
+
+is roughly equivalent to:
+
+checkpointer = MongoDBSaver.from_conn_string(DB_URI)
+
+try:
+    ...
+finally:
+    checkpointer.close()
+
+So Python automatically handles cleanup.
